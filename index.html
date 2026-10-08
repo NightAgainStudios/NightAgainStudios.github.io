@@ -63,10 +63,13 @@
     font-size: clamp(1.05rem, 3.6vw, 1.35rem);
     letter-spacing: 0.22em; text-transform: lowercase;
     color: var(--ink); margin: 8px 0 0; text-align: center;
-    padding-left: 0.22em;           /* letter-spacing trails the last glyph; this re-centres the visible text */
     text-shadow: 0 0 24px rgba(143, 176, 232, 0.25);
   }
-  .tag .dot { color: var(--accent); }
+  /* The WORDS are what the eye centres; the period carries almost no weight, so it hangs outside
+     the centred words (hanging punctuation) instead of pulling them left. The inner span pads its
+     left by the letter-spacing that trails its last glyph, so the glyphs themselves sit on centre. */
+  .tag .words { position: relative; display: inline-block; padding-left: 0.22em; }
+  .tag .dot { position: absolute; left: 100%; top: 0; color: var(--accent); }
 
   section.games { margin-top: 88px; }
   .eyebrow {
@@ -117,7 +120,7 @@
         <img class="face" src="/assets/night-again-studios.png" alt="Night Again Studios" width="1254" height="1254">
       </span>
     </h1>
-    <p class="tag">made after dark<span class="dot">.</span></p>
+    <p class="tag"><span class="words">made after dark<span class="dot">.</span></span></p>
   </header>
 
   <section class="games" aria-labelledby="games-h">
