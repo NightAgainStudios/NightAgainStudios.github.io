@@ -31,7 +31,7 @@
     --rim: rgba(143, 176, 232, 0.22);
   }
   * { box-sizing: border-box; }
-  html, body { margin: 0; background: var(--bg); color: var(--ink); }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); overflow-x: hidden; }   /* both: iOS Safari ignores it on body alone */
   body {
     font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
     min-height: 100dvh; position: relative; overflow-x: hidden;
@@ -52,7 +52,7 @@
      3. a tight edge light on the mark so it stays crisp against its own bloom. */
   .mark { position: relative; display: block; width: min(360px, 78vw); margin: 0 auto; isolation: isolate; }
   .mark::before {
-    content: ""; position: absolute; left: 50%; top: 46%; width: 150%; height: 110%;
+    content: ""; position: absolute; left: 50%; top: 46%; width: min(150%, 100vw); height: 110%;   /* never wider than the phone — it made the page scroll sideways */
     transform: translate(-50%, -50%); z-index: -2; border-radius: 50%;
     background: radial-gradient(closest-side, rgba(79, 118, 206, 0.16), rgba(47, 79, 154, 0.05) 55%, rgba(47, 79, 154, 0) 100%);
   }

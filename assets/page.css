@@ -1,7 +1,7 @@
 @font-face { font-family: "Michroma"; src: url("/assets/fonts/Michroma-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
 :root { --bg: #0a0c12; --ink: #f2efe6; --dim: #8f96ad; --faint: #3a4056; --accent: #8fb0e8; --panel: #10131c; --rim: rgba(143, 176, 232, 0.22); }
 * { box-sizing: border-box; }
-html, body { margin: 0; background: var(--bg); color: var(--ink); }
+html, body { margin: 0; background: var(--bg); color: var(--ink); overflow-x: hidden; }
 body { font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 main { max-width: 680px; margin: 0 auto; padding: 40px 16px 72px; }
 .crumb { display: flex; align-items: center; gap: 12px; margin-bottom: 36px; }
